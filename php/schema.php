@@ -106,8 +106,7 @@ function CREATE_PURCHASED(){
   $sql = "CREATE TABLE PURCHASED (
     E_ID INT(6) PRIMARY KEY,
     ID INT(6),
-    START VARCHAR(15),
-    EXPIRE VARCHAR(15)
+    START VARCHAR(20)
   )";
 
   if (mysqli_query($db, $sql)) {

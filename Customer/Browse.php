@@ -3,7 +3,7 @@
 <div class="container">
 
 <?php
-  $sql = "SELECT * FROM ESTATE";
+  $sql = "SELECT * FROM ESTATE WHERE FLAG = '0' ";
   $result = mysqli_query($db, $sql);
   ?>
 

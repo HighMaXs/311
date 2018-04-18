@@ -31,7 +31,7 @@ if(is_post_request()) {
   PHONE = '$phone' ,
   AGE =' $age' ,
   CITY = '$city' ,
-  GENDER = '$gender' WHERE P_ID = '$id'  ";
+  GENDER = '$gender' WHERE ID = '$id'  ";
 
 echo "successfully submitted";
 $result = mysqli_query($db, $sql);
