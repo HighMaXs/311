@@ -6,27 +6,45 @@ require_once("connect.php");
 
 
 $term = mysqli_real_escape_string($db, $_REQUEST['term']);
-  $sql = "SELECT * FROM STUDENT WHERE NAME LIKE '" . $term . "%'";
+  $sql = "SELECT * FROM ESTATE WHERE SELLER LIKE '" . $term . "%'";
   if($result = mysqli_query($db, $sql)){
-    echo  "<table class = 'table'>" .
-     "<tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Score1</th>
-        <th>Score2</th>
-        <th>Score3</th>
-      </tr>";
+
+ echo  "<table class = 'table'>";
+    echo
+    "<tr>
+       <th>ID</th>
+       <th>Image</th>
+       <th>SELLER</th>
+       <th>LOCATION</th>
+       <th>PRICE</th>
+       <th>TYPE</th>
+       <th>SPACE</th>
+       <th>OPTION</th>
+       <th>ACTION</th>
+     </tr>";
+
+
       if(mysqli_num_rows($result) > 0){
+
           while($row = mysqli_fetch_array($result)){
 
- echo
- "<tr>" .
- "<th>". $row['ID'] . "</th>".
- "<th>" . $row['NAME'] . "</th>".
- "<th>" . $row['SCORE1'] . "</th>".
- "<th>" . $row['SCORE2'] . "</th>".
- "<th>" . $row['SCORE3'] . "</th>" .
-  "</tr>";
+
+   echo
+   "<tr>" .
+     "<td>".  $row['ID'] . "</td>".
+     "<td>".  '<image class="img-fluid mx-auto" width="150" src="../images/' .
+     $row['IMAGE']. '" alt="Hospital image">' . "</td>".
+     "<td>".  $row['SELLER'] . "</td>".
+     "<td>" . $row['LOCATION'] . "</td>".
+     "<td>" . $row['PRICE'] . "</td>".
+     "<td>" . $row['TYPE'] . "</td>".
+     "<td>" . $row['SPACE'] . "</td>" .
+     "<td>" . $row['OPTION'] . "</td>" .
+     "<td>".
+     "<form action='view.php' method='POST'>
+      <button class='btn btn-primary' name='id' type='submit' value='$row[ID]'>View</button>
+      </form> " . "</td>" .
+    "</tr>";
           }
           echo   "</table>";
           mysqli_free_result($result);

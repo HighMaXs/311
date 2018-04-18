@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Project: Anonymous Estate Company">
-    <meta name="keywords" content="HTML,CSS,KFUPM,SWE311,kfupm,css,html,swe311
-          Web Development,Project">
+    <meta name="keywords" content="HTML,CSS,KFUPM,SWE311,kfupm,css,html,swe311Web Development,Project">
     <meta name="author" content="Anonymous">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,35 +20,35 @@
     </header>
 
     <div class="container">
-      <form action="php/submited.php" method="post">
+      <form action="submit.php" method="post">
         <fieldset  class="form-group">
           <legend>Please Fill Your Information:</legend>
 
           <div class="form-group">
-          <label class="form-control-label" for="username">Username</label>
-          <input class="form-control"  type="text" name="Username" placeholder="Username" required>
+            <label class="form-control-label" for="username">Username</label>
+            <input class="form-control"  type="text" name="Username" placeholder="Username" required>
           </div>
 
           <div class="form-group">
-          <label class="form-control-label" for="password">Password</label>
-          <input class="form-control" type="password" name="Password" placeholder="Password" required>
+            <label class="form-control-label" for="password">Password</label>
+            <input class="form-control" type="password" name="Password" placeholder="Password" required>
           </div>
 
           <div class="form-group row">
             <div class="form-group col-6">
-            <label class="form-control-label" for="FirstName">FirstName</label>
-            <input class="form-control" type="text" name="FirstName" placeholder="First Name" required>
+              <label class="form-control-label" for="FirstName">FirstName</label>
+              <input class="form-control" type="text" name="FirstName" placeholder="First Name" required>
             </div>
 
             <div class="form-group col-6">
-            <label class="form-control-label" for="LastName">LastName</label>
-             <input class="form-control" type="text" name="LastName" placeholder="Last Name" required>
+              <label class="form-control-label" for="LastName">LastName</label>
+              <input class="form-control" type="text" name="LastName" placeholder="Last Name" required>
             </div>
           </div>
 
           <div class="form-group">
             <label class="form-control-label" for="Phone">Phone</label>
-            <input  class="form-control" type="tel" name="Phone" placeholder="Ex: 056********" required>
+            <input  class="form-control" type="number" name="Phone" placeholder="Ex: 056********" required>
           </div>
 
             <div class="form-group">
@@ -86,7 +85,7 @@
 
 
     <footer class="text-center">
-    <p class="text-center h4">&copy; Anonymous <?php echo date("Y");?> </p>
+      <p class="text-center h4">&copy; Anonymous <?php echo date("Y");?> </p>
     </footer>
   </body>
 

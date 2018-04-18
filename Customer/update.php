@@ -1,13 +1,13 @@
 <?php include('header.php') ?>
 
-<?php
-  $sql = "SELECT * FROM USER WHERE USERNAME = '$_SESSION[username]'";
-  $result = mysqli_query($db, $sql);
-  $data = mysqli_fetch_assoc($result);
+ <?php
+    $sql = "SELECT * FROM USER WHERE USERNAME = '$_SESSION[username]'";
+    $result = mysqli_query($db, $sql);
+    $data = mysqli_fetch_assoc($result);
   ?>
 
-  <div class="container">
-<form action="submitU.php" method="post">
+<div class="container">
+<form action="submit/submit_update.php" method="post">
 <fieldset  class="form-group">
 
 <div class="form-group">
@@ -69,7 +69,7 @@
       </select>
     </div>
     </div>
-      <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+      <button class="btn-block btn-lg btn-primary" type="submit">Submit</button>
     </fieldset>
     </form>
     </div>

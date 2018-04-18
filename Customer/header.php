@@ -18,6 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="script" src="../js/jquery-3.2.1.min.js">
     <title>Registration Form</title>
   </head>
 
@@ -29,8 +30,7 @@
     <nav class="nav nav-tabs nav-fill flex-column flex-sm-row">
       <a class="nav-item  nav-link " href="Profile.php">Profile</a>
       <a class="nav-item nav-link " href="Browse.php">Browse Estates</a>
-      <a class="nav-item nav-link " href="scores.php">Search Estates</a>
-      <a class="nav-item nav-link " href="rating.php">Rate</a>
-      <a class="nav-item nav-link " href="advertise.php">Advertsments</a>
+      <a class="nav-item nav-link " href="search.php">Search Estates</a>
+      <a class="nav-item nav-link " href="cart.php">Cart</a>
       <a class="nav-item nav-link " href="../logout.php">Logout</a>
     </nav>

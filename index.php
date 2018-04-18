@@ -3,9 +3,14 @@
  CDatabase();
  CREATE_USER();
  CREATE_ESTATE();
+ CREATE_COMMENT();
+ CREATE_RATE();
  INSERT_USER();
  INSERT_ESTATE();
+ CREATE_CART();
+ CREATE_PURCHASED();
  ?>
+ 
 <?php require_once('php/initialize.php'); ?>
 
 <!DOCTYPE>

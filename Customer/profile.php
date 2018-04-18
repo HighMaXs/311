@@ -9,10 +9,14 @@
   $row = mysqli_fetch_assoc($result);
   ?>
 
-  <table class="table-striped table-bordered" ALIGN="CENTER">
+  <table class="table" ALIGN="CENTER">
     <tr>
        <th>Field</th>
        <th>Data</th>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td><?php echo $row["ID"]?></td>
     </tr>
     <tr>
       <td>Username</td>
@@ -44,7 +48,7 @@
     </tr>
     <tr>
       <td colspan ="2">
-        <a href="Update.php"><button class="btn btn-primary" type="button">Update</button></a>
+        <a href="Update.php"><button class="btn-block btn-lg btn-primary" type="button">Update</button></a>
       </td>
     </tr>
   </table>
