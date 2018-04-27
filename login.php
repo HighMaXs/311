@@ -27,6 +27,7 @@ if(is_post_request()) {
         redirect('Customer/profile.php');
       }else{
       echo "username or password was not correct";
+      sleep(10);
   }
 
 }else{

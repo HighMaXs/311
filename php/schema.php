@@ -117,16 +117,16 @@ function CREATE_PURCHASED(){
 function INSERT_USER(){
 $db = db_connect();
 $sql ="INSERT INTO USER
-  (USERNAME, PASSWORD, FIRSTNAME, LASTNAME, PHONE, AGE, CITY, GENDER)
+  (ID, USERNAME, PASSWORD, FIRSTNAME, LASTNAME, PHONE, AGE, CITY, GENDER)
  VALUES
-  ('Mohammed', '1234', 'Mohammed', 'Ahmed', 0564568, 15, 'Dammam', 'Male'),
-  ('Ahmed', '1234', 'Mohammed', 'Ahmed', 0564568, 15, 'Khobar', 'Male'),
-  ('Ryan', '1234', 'Mohammed', 'Ahmed', 0564568, 15, 'Makka', 'Male'),
-  ('Muhanned', '1234', 'Mohammed', 'Ahmed', 0564568, 15, 'Dhahran', 'Male'),
-  ('Ali', '1234', 'Mohammed', 'Ahmed', 0564568, 15, 'Dammam', 'Female'),
-  ('Mahdi', '1234', 'Mohammed', 'Ahmed', 0564568, 15, 'Madina', 'Female'),
-  ('Raed', '1234', 'Mohammed', 'Ahmed', 0564568, 15, 'Dammam', 'Female'),
-  ('Qasim', '1234', 'Mohammed', 'Ahmed', 0564568, 15, 'Dammam', 'Female');";
+  (1, 'Mohammed', '1234', 'Mohammed', 'Ahmed', 0564568, 15, 'Dammam', 'Male'),
+  (2, 'Ahmed', '1234', 'Mohammed', 'Ahmed', 0564568, 15, 'Khobar', 'Male'),
+  (3, 'Ryan', '1234', 'Mohammed', 'Ahmed', 0564568, 15, 'Makka', 'Male'),
+  (4, 'Muhanned', '1234', 'Mohammed', 'Ahmed', 0564568, 15, 'Dhahran', 'Male'),
+  (5, 'Ali', '1234', 'Mohammed', 'Ahmed', 0564568, 15, 'Dammam', 'Female'),
+  (6, 'Mahdi', '1234', 'Mohammed', 'Ahmed', 0564568, 15, 'Madina', 'Female'),
+  (7, 'Raed', '1234', 'Mohammed', 'Ahmed', 0564568, 15, 'Dammam', 'Female'),
+  (8, 'Qasim', '1234', 'Mohammed', 'Ahmed', 0564568, 15, 'Dammam', 'Female');";
 
   if (mysqli_query($db, $sql)) {
   }
@@ -136,14 +136,14 @@ $sql ="INSERT INTO USER
 function INSERT_ESTATE(){
     $db = db_connect();
     $sql ="INSERT INTO ESTATE
-    (IMAGE, SELLER, LOCATION, PRICE, TYPE, SPACE, OPTION)
+    (ID, IMAGE, SELLER, LOCATION, PRICE, TYPE, SPACE, OPTION)
     VALUES
-    ('Estate.jpg','Mohammed','Dammam',1500000, 'Apartment', '250000', 'BUY'),
-    ('Estate.jpg','Ali','Dammam',1500000, 'Apartment', '250000' , 'BUY'),
-    ('Estate.jpg','Mahdi','Dammam',1500000, 'House', '250000', 'BUY'),
-    ('Estate.jpg','Raed','Dammam',1500000, 'Mall', '250000', 'RENT'),
-    ('Estate.jpg','Ahmed','Dammam',1500000, 'Apartment', '250000', 'RENT'),
-    ('Estate.jpg','Mohammed','Dammam',1500000, 'Apartment', '250000', 'RENT');";
+    (1, 'real-estate.jpg','Mohammed Saleh','Dammam',1500000, 'House', '26000', 'BUY'),
+    (2, 'real-estate-house.jpg','Ali qahtani','Dammam',1000000, 'House', '22000' , 'BUY'),
+    (3, 'real-estate-villa.jpg','Mahdi Alnaser','Dammam',13000000, 'Villa', '2500000', 'BUY'),
+    (4, 'real-estate-house2.jpg','Raed Ahmadi','Dammam',1500000, 'House', '25000', 'RENT'),
+    (5, 'House.jpg','Ahmed alrasheed','Dammam',900000, 'House', '15000', 'RENT'),
+    (6, 'HorseCountry.jpg','Mohammed haddad','Dammam',100500, 'House', '30000', 'RENT');";
 
     if (mysqli_query($db, $sql)) {
     }
