@@ -1,17 +1,26 @@
-<?php include('header.php') ?>
+<?php
+ include('header.php');
+ /*
+ view page: allows the user to view all data about the propery and apply functions.
+ add to cart, rate the property and post/view comments.
+ */
+  ?>
 
   <?php
+  // retrive data about propery with id sent from post method
     $id = $_POST['id'];
     $sql = "SELECT * FROM ESTATE WHERE ID = '$id'";
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_assoc($result);
 
+// rating = average rating of all users for this property
     $sql = "SELECT AVG(RATE) FROM RATE WHERE E_ID = '$id'";
     $result = mysqli_query($db, $sql);
     $rate = mysqli_fetch_assoc($result);
   ?>
 
 <br>
+<!-- print propery data -->
   <header class="text-center">
     <h1 class="page-header">Property</h1>
     <br>
@@ -62,7 +71,7 @@
   </table>
 </div>
 
-
+<!-- add the property to the cart -->
 <form action='submit/submit_cart.php' method='POST'>
  <button class='btn-block btn-primary' name='id' type='submit' value='<?php echo $row['ID']?>'>Add to Cart</button>
  </form>
@@ -71,6 +80,7 @@
 <br>
 
 
+<!-- choose and submit rating -->
 <form action= "submit/submit_rate.php" method ='post' >
   <div class="form-group row" >
 <div class="form-group col-6">
@@ -95,6 +105,7 @@
 
 <br>
 
+<!-- write and post comments -->
 <div class="form-group">
   <form action= "submit/submit_comment.php" method ='post'>
 <label class="form-control-label" for="Comment">Comment</label>
@@ -107,6 +118,7 @@
 
 
 <?php
+ // retrieve all comments for this property
   $sql = "SELECT * FROM COMMENT WHERE E_ID = $id";
   $result = mysqli_query($db, $sql);
 ?>

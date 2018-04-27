@@ -1,4 +1,10 @@
-<?php include('header.php') ?>
+<?php
+ include('header.php');
+ /*
+ retrive all properties from the database which are not sold. a flag = 0 for
+ propeties that are not sold and 1 for properites that are sold.
+ */
+  ?>
 
 <div class="container">
 

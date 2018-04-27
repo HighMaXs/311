@@ -1,4 +1,11 @@
-<?php include('header.php') ?>
+<?php
+include('header.php')
+/*
+ user data will be retrived from the database and fill all forms with these data.
+ the user can modify these data submit them to the database using the submit
+ button then he will be redirected to profile page.
+*/
+ ?>
 
  <?php
     $sql = "SELECT * FROM USER WHERE USERNAME = '$_SESSION[username]'";

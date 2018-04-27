@@ -1,4 +1,8 @@
 <!--Footer-->
+<!--
+this pages contains the footer only: contact information, vision and support which is going
+to be included for other pages instead of rewriting the code.
+-->
 <footer class="row" >
   <div class="col text-center">
     <h3>Contact information</h3>

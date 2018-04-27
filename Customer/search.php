@@ -1,12 +1,18 @@
-<?php require_once('../php/initialize.php'); ?>
-<?phprequire_once("../php/query.php"); ?>
-<?php session_start(); ?>
-<?php require_login(); ?>
 
+<?php
+// connect to database, startsession and makesure the user is logged in otherwise redirect to index.
+ require_once('../php/initialize.php');
+ session_start();
+ require_login();
+?>
 
 <!DOCTYPE>
 <html>
   <head>
+    <!--
+      Meta data: include frameworks, make site visibl by search engines
+      and provide encoding data
+    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Project: Anonymous Estate Company">
@@ -19,6 +25,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <title>Registration Form</title>
 
+ <!--style the seller name retrived from database-->
     <style type="text/css">
         /* Formatting result items */
         .result p{
@@ -36,6 +43,8 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript">
+
+    // will retive seller names from the database and display them dynamically
     $(document).ready(function(){
         $('.search-box input[type="text"]').on("keyup input", function(){
             /* Get input value on change */
@@ -51,7 +60,12 @@
             }
         });
 
-        // Set search input value on click of result item
+        /*
+        Set search input value on click of result item, on click all PROPERTIES
+        which are owned by seller will be retrived and displayed to the user
+        then he can view the property
+        */
+
         $(document).on("click", ".result p", function(){
             $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
             $(this).parents(".result").empty();
@@ -84,12 +98,14 @@
     <div class="container">
       <fieldset class="form-group">
       <legend>Search for Estates</legend>
+      <!-- here the seller names will be displayed when the user types-->
         <div class="form-group search-box">
           <label class="form-control-label" for="FirstName">Seller Name:</label>
           <input class="form-control " id="box" type="text" name="FirstName" placeholder="Ex: Mohammed"
            autocomplete="off" c="Search name..." />
         <div class="result"></div>
         </div>
+      <!-- here the reuslt will be displayed on click-->
       <div class="result2">
       </div>
       </fieldset>

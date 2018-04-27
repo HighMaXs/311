@@ -1,7 +1,7 @@
 <?php
 
-// update patient information in database
 
+// include all methods needed and stat session
 require_once("../../php/functions.php");
 require_once("../../php/initialize.php");
 
@@ -22,7 +22,7 @@ if(is_post_request()) {
   $id = $_SESSION['id'];
 
 
-// insert values in database
+// update values in database
  $sql = " UPDATE USER SET
   USERNAME = '$username',
   PASSWORD = '$password' ,

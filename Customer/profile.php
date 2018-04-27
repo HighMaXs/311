@@ -1,12 +1,20 @@
-<?php include('header.php') ?>
+<?php
+// include the header
+ include('header.php');
+ /*
+ this page retrive user data from the database and desplay them.
+ a button is included at the end to update user information which is sent
+ using post method to update.php to allow the users to update their information.
+ */
+?>
 
 
 <div class="container">
 
-<?php
-  $sql = "SELECT * FROM USER WHERE USERNAME = '$_SESSION[username]'";
-  $result = mysqli_query($db, $sql);
-  $row = mysqli_fetch_assoc($result);
+  <?php
+    $sql = "SELECT * FROM USER WHERE USERNAME = '$_SESSION[username]'";
+    $result = mysqli_query($db, $sql);
+    $row = mysqli_fetch_assoc($result);
   ?>
 
   <table class="table" ALIGN="CENTER">
@@ -55,4 +63,7 @@
 
 </div>
 
-<?php include('footer.php') ?>
+<?php
+// include the footer
+ include('footer.php')
+  ?>

@@ -1,6 +1,6 @@
 <?php
 
-
+// include all methods needed and stat session
 require_once("../../php/functions.php");
 require_once("../../php/initialize.php");
 session_start();

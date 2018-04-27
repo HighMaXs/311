@@ -1,9 +1,17 @@
 <?php
 
-
+// include all methods needed and stat session
 require_once("../../php/functions.php");
 require_once("../../php/initialize.php");
 session_start();
+
+/*
+when the user pay, the following events will happen:
+retrive all user properties from the cart
+update property flag = 1 (flag = 1 means the item is sold)
+store bill in database(property id, user id and date of purchase)
+finally, the properties will be removed from the cart
+*/
 
 global $db;
 $db = db_connect();

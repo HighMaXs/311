@@ -1,4 +1,7 @@
-<?php include('header.php') ?>
+<?php
+ include('header.php');
+ // confirm that the user want to buy the items
+  ?>
 
 
 <div class="container">

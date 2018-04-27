@@ -1,14 +1,22 @@
-<?php include('header.php') ?>
+<?php
+ include('header.php');
+ /*
+ this page retrieve all properties from that cart for the specific user
+ who is logged in. also retrive the total price of all these properties
+ this page allow the user to buy the properties on the cart and remove the
+ properties from the cart as well
+ */
+  ?>
 
 <div class="container">
 
 <?php
   $id = $_SESSION['id'];
-
+ // calculate the sum
   $sql = "SELECT SUM(PRICE) FROM ESTATE LEFT JOIN CART ON ESTATE.ID = CART.E_ID WHERE CART.ID = '$id'";
   $result2 = mysqli_query($db, $sql);
   $price = mysqli_fetch_assoc($result2);
-
+// query the properties from cart
   $sql = "SELECT * FROM ESTATE LEFT JOIN CART ON ESTATE.ID = CART.E_ID WHERE CART.ID = '$id'";
   $result = mysqli_query($db, $sql);
 
@@ -63,13 +71,14 @@
 <br>
 <hr>
 
+<!-- pritn the sum -->
 <form action='checkout.php' target="_new" method='POST'>
   <div class="form-group row" >
     <div class="container col-6" Align="center">
       <h3> Total Price = <?php echo $price['SUM(PRICE)'] . " SR"; ?></h2>
     </div>
 
-  <form action='che.php' method='POST'>
+<!-- proceed to checkout --> 
     <div class="form-group col-6" Align="center">
       <button class="btn btn-primary btn-lg" type="submit">Proceed to Checkout</button>
     </div>
