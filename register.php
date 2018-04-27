@@ -2,6 +2,10 @@
 
 <html>
   <head>
+    <!--
+      Meta data: include frameworks, make site visibl by search engines
+      and provide encoding data
+    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Project: Anonymous Estate Company">

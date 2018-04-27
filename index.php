@@ -1,5 +1,7 @@
-<?php require_once('php/schema.php'); ?>
 <?php
+ // contains sql function to create DB, tables and insert data.
+ require_once('php/schema.php');
+ // functions execute sql
  CDatabase();
  CREATE_USER();
  CREATE_ESTATE();
@@ -10,13 +12,20 @@
  CREATE_CART();
  CREATE_PURCHASED();
  ?>
- 
-<?php require_once('php/initialize.php'); ?>
+
+<?php
+// connect to database and include the needed functions
+ require_once('php/initialize.php');
+  ?>
 
 <!DOCTYPE>
 
 <html>
     <head>
+      <!--
+        Meta data: include frameworks, make site visibl by search engines
+        and provide encoding data
+      -->
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta charset="UTF-8">
@@ -38,13 +47,13 @@
             <legend>Login:</legend>
 
             <div class="form-group">
-            <label class="form-control-label" for="username">Username</label>
-            <input class="form-control"  type="text" name="Username" placeholder="Ahmed" required>
+              <label class="form-control-label" for="username">Username</label>
+              <input class="form-control"  type="text" name="Username" placeholder="Ahmed" required>
             </div>
 
             <div class="form-group">
-            <label class="form-control-label" for="password">Password</label>
-            <input class="form-control" type="password" name="Password" placeholder="1234" required>
+              <label class="form-control-label" for="password">Password</label>
+              <input class="form-control" type="password" name="Password" placeholder="1234" required>
             </div>
 
             <button class="btn btn-primary btn-lg" type="submit">Login</button>
@@ -54,8 +63,7 @@
       </div>
 
       <footer class="text-center">
-      <p class="text-center h4">&copy; Anonymous <?php echo date("Y");?> </p>
+        <p class="text-center h4">&copy; Anonymous <?php echo date("Y");?> </p>
       </footer>
     </body>
-
 </html>

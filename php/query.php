@@ -1,9 +1,16 @@
 <?php
 
-
 require_once("connect.php");
 
 $db = db_connect();
+
+/*
+this page is used for search function. it will take the term which is written
+in the search box and store it in $term variable using Request method and will
+check whether the variable is empty or not. if it is empty then print not match.
+if it contains data it will make query from data base for a value that matches
+input in search box. it will print the matched values. 
+*/
 
 $term = mysqli_real_escape_string($db, $_REQUEST['term']);
 if(isset($term)){

@@ -4,7 +4,12 @@ require_once("connect.php");
 
   $db = db_connect();
 
-
+/*
+this page is continue for query.php. if the user clicks on the matched seller name
+it will make query for all peroperties for that seller  and print them for the
+user. then the user can view the propery and apply functions like, add to cart,
+rate, comment ... etc.
+*/
 $term = mysqli_real_escape_string($db, $_REQUEST['term']);
   $sql = "SELECT * FROM ESTATE WHERE SELLER LIKE '" . $term . "%'";
   if($result = mysqli_query($db, $sql)){

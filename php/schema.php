@@ -3,7 +3,13 @@
 require_once('db_credentials.php');
 require_once('connect.php');
 
+/*
+this page contain a list of functions to create the database, tables
+and insert needed data which is useful for the prototype and allow anyone
+to start using the site immediately which helpful for development
+*/
 
+// create the database if it is not created
 function CDatabase(){
 
   $connection = mysqli_connect(DBhost, DBuser, DBpass);
@@ -16,6 +22,7 @@ function CDatabase(){
   $result = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 }
 
+// create table for customers
 function CREATE_USER(){
     $db = db_connect();
     $sql = "CREATE TABLE USER (
@@ -35,7 +42,7 @@ function CREATE_USER(){
 
 }
 
-
+// create table for properties: houses for example
 function CREATE_ESTATE(){
   $db = db_connect();
   $sql = "CREATE TABLE ESTATE (
@@ -55,10 +62,10 @@ function CREATE_ESTATE(){
 
 }
 
-
+// comments table which connect users with properties.
 function CREATE_COMMENT(){
   $db = db_connect();
-
+ //id = comment id, E_id = property id, day = time and date of comment
   $sql = "CREATE TABLE COMMENT (
     ID INT(6) AUTO_INCREMENT PRIMARY KEY,
     E_ID INT(6),
@@ -73,10 +80,10 @@ function CREATE_COMMENT(){
 
 }
 
-
+// rate table which connect users with properties.
 function CREATE_RATE(){
   $db = db_connect();
-   // id = user id
+   // id = user id, E_id = property id
   $sql = "CREATE TABLE RATE (
     E_ID INT(6) PRIMARY KEY,
     ID INT(6)  unique,
@@ -87,10 +94,10 @@ function CREATE_RATE(){
   }
 
 }
-
+// cart for customers which allows them to add and remove properties
 function CREATE_CART(){
   $db = db_connect();
-   // id = user id
+   // id = user id, E_id = propery id 
   $sql = "CREATE TABLE CART (
     E_ID INT(6) PRIMARY KEY,
     ID INT(6)
@@ -100,9 +107,11 @@ function CREATE_CART(){
   }
 }
 
+// contain information about who bought the property and when(data and time)
 function CREATE_PURCHASED(){
   $db = db_connect();
    // id = user id
+   //start = time and data of purchase
   $sql = "CREATE TABLE PURCHASED (
     E_ID INT(6) PRIMARY KEY,
     ID INT(6),
@@ -113,7 +122,7 @@ function CREATE_PURCHASED(){
   }
 }
 
-
+// insert customers data
 function INSERT_USER(){
 $db = db_connect();
 $sql ="INSERT INTO USER
@@ -133,6 +142,7 @@ $sql ="INSERT INTO USER
 
 }
 
+// insert properties data
 function INSERT_ESTATE(){
     $db = db_connect();
     $sql ="INSERT INTO ESTATE
