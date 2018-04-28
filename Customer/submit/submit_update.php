@@ -4,6 +4,7 @@
 // include all methods needed and stat session
 require_once("../../php/functions.php");
 require_once("../../php/initialize.php");
+session_start();
 
 global $db;
 $db = db_connect();
@@ -39,7 +40,6 @@ $result = mysqli_query($db, $sql);
 }else{
   echo mysqli_error($db);
 }
-
 
 
 db_disconnect($db);

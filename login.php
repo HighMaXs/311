@@ -30,6 +30,7 @@ if(is_post_request()) {
         redirect('Customer/profile.php');
       }else{
       echo "username or password was not correct";
+    //  redirect('index.php');
   }
 
 }else{
@@ -37,6 +38,7 @@ if(is_post_request()) {
   redirect('index.php');
   exit;
 }
+
 
 db_disconnect($db);
  ?>
